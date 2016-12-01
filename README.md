@@ -12,6 +12,8 @@ Discovery, Installation, Definition of Plugins
 ===
 _approximate duration : 15 minutes_
 
+- what is a plugin and when is it useful
+- examples are popular core and community plugins
 - npm as a cordova plugin registry
 - cordova/phonegap tooling to add|remove|ls plugins
 - a walk through the plugin.xml format
@@ -61,9 +63,10 @@ Plugin Publishing
 ===
 _approximate duration : 15 minutes_
 - how to share plugins
+  - common naming conventions (`cordova-`, `phonegap-`, `ionic-`, `telerik-`)
 - publishing with npm
 - publishing with plugman
-
+  
 
 Advanced Topics ~ Time permitting
 
