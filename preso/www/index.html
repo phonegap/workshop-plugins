@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>PhoneGap Day EU 2016 </title>
+    <link href="topcoat/css/topcoat-mobile-light.min.css" rel="stylesheet" type="text/css">
+    <link href="css/keypoint.css" rel="stylesheet" type="text/css">
+    <link href="css/prettify.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-721308-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+
+<body>
+
+<img id="logo" src="images/adobe.svg"/>
+
+<div id="wrapper"></div>
+
+<div id="slides">
+
+<div class="slide">
+    <h1>PhoneGap Essentials Workshop</h1>
+    
+    <img src="images/ams.jpg" width="560" height="400"/>
+    <h2>PhoneGap Day EU 2016</h3>
+ </div>
+
+<div class="slide">
+
+    <h1>Hello my name is...</h1>
+    <div style="text-align: left">
+        <p><span class="topcoat-icon icon--user"></span>Holly Schinsky</p>
+        <p><span class="topcoat-icon icon--location"></span>Tampa, FL</p>
+        <p><span class="topcoat-icon icon--twitter"></span>@devgirlfl</p>
+        <p><span class="topcoat-icon icon--rss"></span>http://devgirl.org</p>
+        <p><span class="topcoat-icon icon--github"></span>https://github.com/hollyschinsky</p>
+    </div>
+    
+</div>
+    <div class="slide">
+    <h1><span>Required: Install PhoneGap CLI </span></h1>
+      $ npm install -g phonegap@latest
+        
+     <p> Version 6.23 or greater </p>
+</div>
+
+<div class="slide">
+    <h1><span>Overview & Demo</span></h1>
+      <h5>App</h5><h5 style="color: red"> https://github.com/hollyschinsky/pgday-eu-star-track</h5>
+      <h5>Solutions</h5><h5 style="color: red"> https://github.com/hollyschinsky/pgday-eu-star-track-solutions</h5>    
+      <h5>Tutorial</h5><h5 style="color: red"> http://hollyschinsky.github.io/pgday-eu-star-track/</h5>    
+</div>
+
+    
+<div class="slide">
+    <h2>Mobile App Concepts</h1>
+        <li>Navigation</li>
+        <li>View Stacks</li>
+        <li>Routing</li>
+        <li>Templates</li>
+    <img src="images/view-stack.png"/>
+</div>
+
+<div class="slide">
+    <h1>View Stack Navigation</h1>
+    <p><i><strong>Push</strong></i> to show next view</p>
+    <p><i><strong>Pop</strong></i> to previous view (back button)</p>
+    <p>Tabbed Application (multiple stacks of views with their own stacks)</p>
+    <p>Saves History for Tracking</p>
+</div>
+
+<div class="slide">
+    <h1>Single Page Application</h1>
+    <ul>
+        <li>Client-side rendering via templates, no servers returning HTML pages.</li>
+        <li>A  <i>router</i> is used to load a <i>template</i> with <i>data</i>, a transition used to animate it.</li>
+        <li>Data is bound to the templates via <i>expressions</i>.</li>
+    </ul>
+    <img src="images/spa.png"/>
+</div>
+
+<div class="slide">
+    <h1>Popular Mobile Frameworks</h1>
+     <p><span><img src="images/ionic-logo.png" class="pad"/><img src="images/onsen.png" class="pad"/><img src="images/f7.jpeg" class="pad"/><img src="images/kendo.png" class="pad"/></span></p>
+</div>
+
+<div class="slide">
+    <h1>Lightweight Mobile Frameworks (CSS)</h1>
+      <p>Topcoat</p>
+      <p>Ratchet</p>
+      <p>Zurb Foundation for Apps</p>
+</div>
+
+
+<div class="slide">
+    <h1><span><img src="images/framework7-logo.jpeg"/></span>&nbsp;Framework7 Overview</h1>
+    <ul>
+        <li>Easy familiar syntax (jQuery like)</li><pre class="prettyprint">
+        $$('#search').addClass('hide');
+        </pre>        
+        <li>No reliance on 3rd party frameworks</li>
+        <li>Built in navigation, view stack handling, routing</li>
+        <li>Tons of UI components (see kitchen sink)</li>
+        <li>Built-in features (pull to refresh, infinite scroll)</li>
+        <li>Performance optimizations</li>
+        <li>iOS and Android (Win support this year)</li>
+        <!--<li>Performance optimizations including hardware accelerated transitions, lazy loading, virtual lists,
+        native scrolling, caching and click-delay handling</li>  -->
+    </ul>
+</div>
+
+<div class="slide">
+    <h1>UX Comparisons</h1>
+    <h3>iOS - Flat Design</h3>
+    <img src="images/ios-flat.jpg" style="float:right">
+    <ul  style="float:left">
+        <li>Back to the basics, stripped of 3D elements</li>        
+        <li>Faster load times</li>
+        <li>Simple icons, buttons</li>
+        <li>Some argue too simplistic and generic</li>
+    </ul> 
+    
+    
+</div>
+<div class="slide">        
+    <h1>UX Comparisons</h1>    
+    <h3>Android - Material Design</h3>
+    <img src="images/material-design.gif" width="300" height="250" style="float:right">        
+    <ul>
+        <li><a href="http://www.google.com/design/spec/material-design/introduction.html">Set of standards designed by Google</a></li>     
+        <li>Uses Z-Axis</li>        
+        <li>Universally adaptable, responsive </li>
+        <li>Includes animations but <a href="https://www.reddit.com/r/Android/comments/29d412/material_design_animations_turn_off_to_save/">may drain battery on mobile</a></li>
+        <li>Some argue rendering guidelines may further stifle individual creativity slow dev't time  </li>    
+        
+    </ul>    
+</div>
+
+<div class="slide">
+  <div class="phone2 phone-android">
+    <div class="statusbar"></div>
+      <iframe src="http://framework7.io/kitchen-sink-material/" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <p><img src="images/arrow-left.png"/> Flat Design (iOS)<p>
+  <p>Material Design (Android) <img src="images/arrow.png"/> </p>
+  <div class="phone">
+    <div class="statusbar"></div>
+      <iframe src="http://framework7.io/kitchen-sink-ios/" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<div>
+    <h1>UX / Design Concerns</h1>
+        <ul>
+            <li>No bottom tab bars on Android</li>
+            <li>Don't use labeled back buttons on action bars in Android</li>
+            <li>Back icons are different (< vs <-)</li>
+            <li>Chips, Floating Action Buttons typically Android Only</li>
+            <li>Input fields are different and denote platform</li>
+            <li>Different animations when transitioning views</li>
+        </ul>
+</div>
+
+<div class="slide"> 
+    <iframe src="http://giphy.com/embed/SiK9mERmhItXi?html5=true" width="480" height="471" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/cat-party-dj-SiK9mERmhItXi"></a></p>
+    
+
+
+
+</div> <!-- end of '#slides' -->
+
+<a id="menu-btn" class="topcoat-icon-button--quiet">
+    <span class="topcoat-icon topcoat-icon--menu-stack"></span>
+</a>
+
+<div id="menu">
+    <div class="header">
+        <div class="title">PhoneGap Workshop</div>
+    </div>
+    <div class="topcoat-list__container scroller cf">
+        <ol id="list" class="topcoat-list"></ol>
+    </div>
+</div>
+
+<script src="cordova.js"></script>
+<script src="lib/fastclick.js"></script>
+<script src="lib/prettify.js"></script>
+<script src="lib/swipeview.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="js/keypoint.js"></script>
+<script src="js/slides.js"></script>
+</body>
+</html>

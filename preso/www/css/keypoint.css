@@ -1,0 +1,594 @@
+@font-face {
+    font-family: "Source Code";
+    src: url("../topcoat/font/SourceCodePro-Regular.otf");
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #fff;
+    font-size: 36px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2, p {
+    color: #000;
+}
+
+h1 {
+    padding-bottom: 30px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 46px;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 38px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: solid 1px #aaa;
+    width: 250px;
+    padding: 16px;
+}
+
+#wrapper {
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+}
+
+#swipeview-slider > div {
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    -o-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-box-pack: center;
+    -o-box-pack: center;
+    box-pack: center;
+    -webkit-box-align: center;
+    -mox-box-align: center;
+    -ms-box-align: center;
+    -o-box-align: center;
+    box-align: center;
+    overflow: hidden;
+}
+.credit {
+    font-size: 14px;
+}
+    
+#slides {
+    display: none;
+}
+
+#audience-pic {
+    width: 720px;
+    height: 540px;
+    border: solid 16px #efefef;
+    display: block;
+    margin: 0px 0px 10px 0px;
+}
+
+.icon--camera {
+    background: url("img/camera.svg") no-repeat;
+    background-size: cover;
+}
+
+.icon--github {
+    background: url("img/github.svg") no-repeat;
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    margin-right: 1rem;
+}
+
+.icon--rss {
+    background: url("img/rss.svg") no-repeat;
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    margin-right: 1rem;
+}
+
+.icon--twitter {
+    background: url("img/twitter.svg") no-repeat;
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    margin-right: 1rem;
+}
+
+.icon--location {
+    background: url("img/location.svg") no-repeat;
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    margin-right: 1rem;
+}
+
+.icon--user {
+    background: url("img/user.svg") no-repeat;
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+    margin-right: 1rem;
+}
+
+.slide {
+    text-align: center;
+}
+
+.slide ul,
+.slide ol {
+    text-align: left;
+}
+
+.slide li {
+    padding-bottom: 20px;
+}
+
+img.full {
+    max-width: 900px;
+    max-height: 600px;
+    margin-top: 20px;
+}
+
+#wrapper > div > .swipeview-loading {
+    background: url("img/spinner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-animation: spinner 1s infinite linear;
+}
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#wrapper > div > .swipeview-loading .slide {
+    opacity: 0;
+}
+
+#menu {
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: -250px;
+    width: 250px;
+    font-size: 1rem;
+    border-right: solid 1px #888;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    display: -webkit-box; /* iOS */
+    -webkit-box-orient: vertical; /* iOS */
+}
+.pad {
+    padding: 10px;
+}
+#menu .header {
+    height: 64px;
+    padding: 8px;
+    border-bottom: solid 1px #888;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+#menu .header > img {
+    width: 57px;
+    height: 57px;
+    float: left;
+}
+
+#menu .title {
+    padding: 30px 0px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+#menu-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+#menu.visible {
+    -webkit-transform: translate3d(250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
+}
+
+#logo {
+    /*z-index: 10;*/
+    position: absolute;
+    right: 50px;
+    height: 80px;
+}
+
+.scroller {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    background: #DFE2E2;
+    border-top: solid 1px #BFC2C2;
+    flex: 1;
+    -webkit-box-flex: 1; /* iOS */
+}
+
+.scroller > ol {
+    list-style-position: inside;
+}
+p {
+  font-size: 32px;
+}
+li {
+  font-size: 22px;
+}
+
+.scroller > ol > li {
+    padding: 0px 0px 0px 0px;
+    margin-left: 0px;
+}
+
+.scroller > ol > li > a {
+    display: block;
+    padding: 16px;
+}
+
+.topcoat-list li:active {
+    background-color: #ddd;
+}
+
+.grid {
+    display: flex;
+    display: -webkit-box;
+    width: 900px;
+}
+
+.grid-cell {
+    border: solid 1px #fff;
+    flex: 1;
+    -webkit-box-flex: 1;
+    margin: 10px 4px;
+    padding: 28px 4px;
+}
+.li-small {
+    font-size: 24px;
+}
+
+.phone {
+    position: absolute;
+    background: #111;
+    border-radius: 55px;
+    box-shadow: 0px 0px 0px 2px #aaa;
+    top: -50px;
+    left: 40px;
+    width: 320px;
+    height: 568px;
+    padding: 105px 25px;
+}
+.phone:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 50%;
+    margin-right: -30px;
+    bottom: 20px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 5px solid #333;
+}
+.phone:before {
+    content: '';
+    width: 60px;
+    height: 10px;
+    border-radius: 10px;
+    position: absolute;
+    right: 50%;
+    margin-right: -30px;
+    background: #333;
+    top: 50px;
+}
+.phone .statusbar {
+    position: absolute;
+    width: 320px;
+    height: 20px;
+    background: url(http://cdn.framework7.io/i/status-bar.png);
+    right: 50%;
+    margin-right: -160px;
+    top: 100px;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.phone iframe {
+    width: 320px;
+    height: 548px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+.phone.phone-android {
+    border-radius: 20px;
+    width: 360px;
+    padding: 60px 20px;
+    height: 640px;
+    margin-top: 9px;
+}
+.phone.phone-android .theme-switch {
+    margin-top: -9px;
+}
+.phone.phone-android:before {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    right: 50%;
+    margin-right: -7px;
+    background: #666;
+    top: 25px;
+}
+.phone.phone-android:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    right: 50px;
+    background: #444;
+    top: 30px;
+    margin-right: 0;
+}
+.phone.phone-android iframe {
+    width: 360px;
+    height: 615px;
+    margin-top: 25px;
+}
+.phone.phone-android .statusbar {
+    width: 360px;
+    height: 25px;
+    background-image: url(http://cdn.framework7.io/i/status-bar-android.png);
+    margin-right: -180px;
+    top: 60px;
+}
+
+
+
+.phone2 {
+    position: absolute;
+    background: #111;
+    border-radius: 55px;
+    box-shadow: 0px 0px 0px 2px #aaa;
+    top: -50px;
+    right: 40px;
+    width: 320px;
+    height: 568px;
+    padding: 105px 25px;
+}
+.phone2:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 5px solid #333;
+}
+.phone2:before {
+    content: '';
+    width: 60px;
+    height: 10px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    background: #333;
+    top: 50px;
+}
+.phone2 .statusbar {
+    position: absolute;
+    width: 320px;
+    height: 20px;
+    background: url(http://cdn.framework7.io/i/status-bar.png);
+    left: 50%;
+    margin-left: -160px;
+    top: 100px;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.phone2 iframe {
+    width: 320px;
+    height: 548px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+.phone2.phone-android {
+    border-radius: 20px;
+    width: 360px;
+    padding: 60px 20px;
+    height: 640px;
+    margin-top: 9px;
+}
+.phone2.phone-android .theme-switch {
+    margin-top: -9px;
+}
+.phone2.phone-android:before {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -7px;
+    background: #666;
+    top: 25px;
+}
+.phone2.phone-android:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50px;
+    background: #444;
+    top: 30px;
+    margin-left: 0;
+}
+.phone2.phone-android iframe {
+    width: 360px;
+    height: 615px;
+    margin-top: 25px;
+}
+.phone2.phone-android .statusbar {
+    width: 360px;
+    height: 25px;
+    background-image: url(http://cdn.framework7.io/i/status-bar-android.png);
+    margin-left: -180px;
+    top: 60px;
+}
+
+
+
+
+
+
+
+
+.phone .theme-switch {
+    position: absolute;
+    right: 100%;
+    margin-right: 2px;
+    top: 70px;
+    white-space: nowrap;
+}
+.phone .theme-switch a {
+    text-align: center;
+    background: #b72f20;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px 0 0 5px;
+    display: block;
+    font-size: 12px;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -ms-transition: 200ms;
+    -o-transition: 200ms;
+    transition: 200ms;
+    opacity: 0.5;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.phone .theme-switch a span {
+    display: block;
+}
+.phone .theme-switch a.active,
+.phone .theme-switch a:hover {
+    opacity: 1;
+}
+.phone .theme-switch a+a {
+    margin-top: 10px;
+}
+.phone .theme-switch a.active:hover .theme-icon {
+    opacity: 0;
+}
+.phone .theme-switch a.active:hover .fullscreen {
+    opacity: 1;
+}
+.phone .theme-switch .theme-icon,
+.phone .theme-switch .fullscreen {
+    -webkit-transition: 100ms;
+    -moz-transition: 100ms;
+    -ms-transition: 100ms;
+    -o-transition: 100ms;
+    transition: 100ms;
+}
+.phone .theme-switch .fullscreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-size: 10px;
+    line-height: 1;
+    opacity: 0;
+}
+.phone .theme-switch .logo-apple,
+.phone .theme-switch .logo-android {
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 3px;
+}
+.phone .theme-switch .logo-apple {
+    background-image: url(http://cdn.framework7.io/i/logo-apple.png);
+}
+.phone .theme-switch .logo-android {
+    background-image: url(http://cdn.framework7.io/i/logo-android.png);
+}
+.phone .theme-switch .fullscreen i {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org…29v1.066h12.795v-25.59z'%20fill%3D'%23ffffff'%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.phone .theme-switch .fullscreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-size: 10px;
+    line-height: 1;
+    opacity: 0;
+}
