@@ -7,7 +7,7 @@ title:  PhoneGap Lab - Using Plugins End to End
 
 The sample project is located on the associated GitHub repo [here](https://github.com/phonegap/workshop-plugins).
 
-The slides used in the workshop can be found (**TODO** add [text](http://link))
+The slides used in the lab can be found (**TODO** add [text](http://link))
 
 
 (**TODO** add pretty screenshots of end results?)
@@ -38,18 +38,19 @@ SDK for that platform (iOS SDK, Android SDK, etc.) installed on your system.
 
 - You can contact us on Twitter:
 
-    <a href="https://twitter.com/devgirlfl" class="twitter-follow-button" data-show-count="true"
-    data-size="large" data-lang="en">Follow
-    @devgirlfl</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
     <a href="https://twitter.com/purplecabbage" class="twitter-follow-button" data-show-count="true"
     data-size="large" data-lang="en">Follow
     @purplecabbage</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+    <a href="https://twitter.com/devgirlfl" class="twitter-follow-button" data-show-count="true"
+    data-size="large" data-lang="en">Follow
+    @devgirlfl</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 
 ## Slides
+
 (**TODO** add [slides](http://link))
 
 <div class="row" style="margin-top:40px;">

@@ -1,10 +1,27 @@
 ---
 layout: module
-title: Module 4&#58; Results Filtering
+title: Module 4&#58; Plugin Testing
 ---
 
-### Overview
-In this step we'll add a [Framework7 Searchbar]((http://framework7.io/docs/searchbar.html) component to our results page to allow the user to search/filter the results with a matching string
+# Overview
+
+- how does Apache Cordova test plugins?
+- how does PhoneGap test plugins?
+- tools to help you, paramedic, jasmine, jshint
+- demo paramedic running tests against a plugin
+- exercise: write and run some simple tests for a plugin
+
+## Apache Cordova Plugin Testing
+
+## PhoneGap Plugin Testing
+
+## Testing tools
+
+## Demo
+
+## Exercise: Write and Run Tests
+
+<!--In this step we'll add a [Framework7 Searchbar]((http://framework7.io/docs/searchbar.html) component to our results page to allow the user to search/filter the results with a matching string
 entered by the user. This component is used to filter results *after* they are received. 
 
 Below is the result on iOS and Android respectively:
@@ -31,6 +48,7 @@ before the `<div>` with the `.page-content` class as shown in the image directly
           </form>
 
    <img class="screenshot2" src="images/search-loc.png"/>
+
 2. Next, open the `www/js/myApp.js` file and add the following code block just above the `myApp.onPageInit('details', function(page) {..}))` function. 
 This new function will run when the `results` page initializes and will initialize the `searchbar` component
 with the parameters shown. Each of these parameters is set to a class name that you will apply in the HTML
@@ -74,30 +92,7 @@ Add it just after the `searchbar-not-found` `<div>` added above.
 
         <div class="searchbar-overlay"></div>
 
-### Code Review
-The final code block with all the additions should look like this code below:
-
-        <form class="searchbar">
-            <div class="searchbar-input">
-                <input type="search" placeholder="Search">
-                <a href="#" class="searchbar-clear"></a>
-            </div>            
-        </form>
-
-        <div class="content-block searchbar-not-found">
-               Nothing found
-        </div>
-
-        <div class="searchbar-overlay"></div>
-        <div class="page-content">
-          <div class="content-block-title">{{tracks.count}} tracks returned</div>
-          <div class="list-block media-list list-block-search searchbar-found">
-            <ul>{% raw %}
-              {{#each tracks.items}}
-            {% endraw %}
-
-             
-
+-->
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
