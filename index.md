@@ -5,25 +5,21 @@ title:  PhoneGap Lab - Using Plugins End to End
 
 # What You Will Learn
 
-The sample project is located on the associated GitHub repo [here](https://github.com/phonegap/workshop-plugins).
+- The sample project is located on the associated GitHub repo [here](https://github.com/phonegap/workshop-plugins).
+- The slides used in the lab can be found **TODO** add [here](http://link))
 
-The slides used in the lab can be found (**TODO** add [text](http://link))
-
-
-(**TODO** add pretty screenshots of end results?)
-
+**TODO** add pretty screenshots/images
 
 ## Requirements & Dependencies
-(**TODO** review what's really needed and add any specific versions)
+
+**TODO** review what's really needed here and add any specific versions
 
 - A code editor, a modern browser, and a connection to the Internet.
 - A working knowledge of a native language (Java, Objective-C, Swift, C#), but you don't need to be a guru.
 - PhoneGap CLI (`npm install -g phonegap`)
 - plugman (`npm install -g plugman`)
 
-
-
->A mobile device or a Mobile SDK is **not** a requirement for this tutorial. You will able to test your application in the browser or with the
+> A mobile device or a Mobile SDK is **not** a requirement for this tutorial. You will able to test your application in the browser or with the
 [PhoneGap Developer App](app.developer.com) with some limitations. If you want the full support of the native APIs then you will need the mobile
 SDK for that platform (iOS SDK, Android SDK, etc.) installed on your system.
 
@@ -51,7 +47,7 @@ SDK for that platform (iOS SDK, Android SDK, etc.) installed on your system.
 
 ## Slides
 
-(**TODO** add [slides](http://link))
+**TODO** add [slides](http://link)
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

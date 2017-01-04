@@ -3,13 +3,7 @@ layout: module
 title: Module 3&#58; Plugin Publishing
 ---
 
-# Overview
-
 _approximate duration : 15 minutes_
-
-- how to share plugins
-- publishing with npm
-- publishing with plugman
 
 ## Sharing Plugins
 

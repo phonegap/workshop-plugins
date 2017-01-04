@@ -3,13 +3,7 @@ layout: module
 title: Module 4&#58; Plugin Testing
 ---
 
-# Overview
-
-- how does Apache Cordova test plugins?
-- how does PhoneGap test plugins?
-- tools to help you, paramedic, jasmine, jshint
-- demo paramedic running tests against a plugin
-- exercise: write and run some simple tests for a plugin
+_approximate duration : time permitting_
 
 ## Apache Cordova Plugin Testing
 
@@ -17,9 +11,15 @@ title: Module 4&#58; Plugin Testing
 
 ## Testing tools
 
+_tools to help you, paramedic, jasmine, jshint_
+
 ## Demo
 
-## Exercise: Write and Run Tests
+_paramedic running tests against a plugin_
+
+## Exercise: 
+
+> write and run some simple tests for a plugin
 
 <!--In this step we'll add a [Framework7 Searchbar]((http://framework7.io/docs/searchbar.html) component to our results page to allow the user to search/filter the results with a matching string
 entered by the user. This component is used to filter results *after* they are received. 

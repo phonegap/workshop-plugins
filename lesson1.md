@@ -3,28 +3,34 @@ layout: module
 title: Module 1&#58; Discovery, Installation, Definition of Plugins
 ---
 
-# Overview
-
 _approximate duration : 15 minutes_
 
-- npm as a cordova plugin registry
-- cordova/phonegap tooling to add|remove|ls plugins
-- a walk through the plugin.xml format
+## Cordova Plugin Registry
+
+npm as a cordova plugin registry
+
+## Add/Remove Plugins with Tooling
+
+Cordova/Phonegap tooling to add/remove/list plugins
+
+## Plugin.xml
+
+A walk through of the format...
+
     - defining platform code
     - shared js code
     - id/name/version
     - dependencies
     - tools to use to create plugins, plugman, phonegap/phonegap-plugin-template
-    - exercise, create a plugin using above tools, make it depend on 2 other plugins, install it
-- what's next in plugin definition? package.json
 
-## Cordova Plugin Registry
+### Exercise:
 
-## Add/Remove Plugins with Tooling
+> Create a plugin using above tools, make it depend on 2 other plugins, install it
 
-## Plugin.xml
 
 ## Coming Soon... `package.json`
+
+_discussion of what's next in plugin definition_
 
 <!--
   **NOTE:** If you don't have the PhoneGap Developer App, you can still run the app in your browser by opening the `index.html` file in the browser, you will just have limited
