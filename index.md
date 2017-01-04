@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Adobe Tech Summit PhoneGap Plugins Workshop
+title:  PhoneGap Lab - Using Plugins End to End
 ---
 
 # What You Will Learn
