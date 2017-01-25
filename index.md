@@ -5,26 +5,29 @@ title:  PhoneGap Lab - Using Plugins End to End
 
 # What You Will Learn
 
-- The sample project is located on the associated GitHub repo [here](https://github.com/phonegap/workshop-plugins).
-- The slides used in the lab can be found **TODO** add [here](http://link))
+This lab will take you through the process of building your own PhoneGap plugins from beginning to end. We will cover
+the basic requirements for a PhoneGap plugin all the way to testing and publishing your new plugin for others to consume.
 
-**TODO** add pretty screenshots/images
+- The sample project is located in the GitHub repo [here](https://github.com/phonegap/workshop-plugins)
+- The slides used in the lab can be found [here](http://link)
+
+<!--TODO: Add slides link in above-->
 
 ## Requirements & Dependencies
 
-**TODO** review what's really needed here and add any specific versions
+<!--TODO: Specific versions listed below? Node? -->
 
-- A code editor, a modern browser, and a connection to the Internet.
-- A working knowledge of a native language (Java, Objective-C, Swift, C#), but you don't need to be a guru.
-- PhoneGap CLI (`npm install -g phonegap`)
-- plugman (`npm install -g plugman`)
-
-> A mobile device or a Mobile SDK is **not** a requirement for this tutorial. You will able to test your application in the browser or with the
-[PhoneGap Developer App](app.developer.com) with some limitations. If you want the full support of the native APIs then you will need the mobile
-SDK for that platform (iOS SDK, Android SDK, etc.) installed on your system.
+- A code editor, a modern browser, and a connection to the Internet
+- A working knowledge of a native language (Java, Objective-C, Swift, C#) (but you don't need to be a guru)
+- [Node.js](https://nodejs.org/)
+- [PhoneGap CLI](https://www.npmjs.com/package/phonegap) (`npm install -g phonegap`) or the [Cordova CLI](https://www.npmjs.com/package/cordova-cli) (`npm install -g cordova`)
+- [plugman](https://www.npmjs.com/package/plugman) (`npm install -g plugman`)
+- [phonegap-plugin-template](https://github.com/phonegap/phonegap-plugin-template) (`npm install -g phonegap/phonegap-plugin-template`)
 
 ## Useful Resources
 
+- [Cordova Plugin Development Guide](https://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/)
+- [Cordova Plugin Specification](https://cordova.apache.org/docs/en/latest/plugin_ref/spec.html)
 
 ## Issues/Feedback
 
@@ -43,11 +46,6 @@ SDK for that platform (iOS SDK, Android SDK, etc.) installed on your system.
     data-size="large" data-lang="en">Follow
     @devgirlfl</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-## Slides
-
-**TODO** add [slides](http://link)
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

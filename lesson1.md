@@ -1,55 +1,55 @@
 ---
 layout: module
-title: Module 1&#58; Discovery, Installation, Definition of Plugins
+title: Module 1&#58; Plugin Discovery and Installation
 ---
 
-_approximate duration : 15 minutes_
-
-## Cordova Plugin Registry
-
-npm as a cordova plugin registry
-
-## Add/Remove Plugins with Tooling
-
-Cordova/Phonegap tooling to add/remove/list plugins
-
-## Plugin.xml
-
-A walk through of the format...
-
-    - defining platform code
-    - shared js code
-    - id/name/version
-    - dependencies
-    - tools to use to create plugins, plugman, phonegap/phonegap-plugin-template
-
-### Exercise:
-
-> Create a plugin using above tools, make it depend on 2 other plugins, install it
-
-
-## Coming Soon... `package.json`
-
-_discussion of what's next in plugin definition_
+_approximate duration : 5 minutes_
 
 <!--
-  **NOTE:** If you don't have the PhoneGap Developer App, you can still run the app in your browser by opening the `index.html` file in the browser, you will just have limited
-  functionality.
-
-- Spend a moment trying out the app, ensuring it looks like what you see below:
-
-  <img class="screenshot-full" src="images/star-track-screens-ios.jpg"/><br>
-
->You should use your browser developer tools at any time during this workshop to help debug any issues. In Chrome you can access them with **Alt+Cmd+I** or via the **View->Developer** menu.
-
-### PhoneGap Developer App Tips
-When viewing your apps with the PhoneGap Developer app, you should be aware of the following gestures:
-
-- Use a *4 finger* tap to force your app to refresh
-- Use a *3 finger* tap to go to the home screen
-
+for cordova-plugin-device, I showed the repo, then I explained the contents of plugin.xml
+then I showed how each plugin.xml element mapped to an output project
+then I explained how the device.js file was able to send/receive messages from the native layer via exec
+then I created a new project, installed the plugin and step debugged the native parts in xcode
 -->
 
+## Plugin Discovery
+You can discover Cordova plugins directly in [npm](http://nmpjs.org) by searching `ecosystem:cordova`.
+
+<!--Demo using npm as a cordova plugin registry-->
+
+### Exercise 1
+
+Navigate to [npmjs.org](http://npmjs.org) and do your own search for Cordova plugins now to see what you can find. Does it look like the picture below? Scroll through and take a look at all of the different plugins already available. 
+
+![](images/npm-plugin-search.png)
+
+
+## Plugin Installation 
+Plugins are added and removed using the [Cordova](https://www.npmjs.com/package/cordova-cli) or [PhoneGap CLI](https://www.npmjs.com/package/phonegap).
+
+  - **Add a Plugin**
+
+      - `$ phonegap plugin add cordova-plugin-device`
+      - `$ cordova plugin add cordova-plugin-device`
+
+  - **Remove a Plugin**
+
+      - `$ phonegap plugin remove cordova-plugin-device`
+      - `$ cordova plugin remove cordova-plugin-device`
+
+  - **List all Plugins**
+
+     - `$ phonegap plugin list`
+     - `$ cordova plugin list`
+
+>The platform specific plugin code will be copied into the target platform when a `prepare`, `build` or `run` command is specified using one of the CLI's. 
+>If the plugin supports the `browser` platform, it will be copied to that target when the `phonegap serve` command is run. 
+
+### Exercise 2
+
+Take a moment and try out some plugin commands with one of your Cordova or PhoneGap projects now to see how you can add, remove and list plugins.
+
+>If you need to create a project first with the CLI, do so with the following commands, from the Cordova or PhoneGap CLI respectively: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and run the plugin commands listed above.
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

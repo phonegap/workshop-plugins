@@ -1,98 +1,56 @@
 ---
 layout: module
-title: Module 4&#58; Plugin Testing
+title: Module 4&#58; Plugin Publishing
 ---
 
-_approximate duration : time permitting_
+_approximate duration : 15 minutes_
 
-## Apache Cordova Plugin Testing
+## Searchability 
 
-## PhoneGap Plugin Testing
+You can add keywords to your plugin's `package.json` file at the root of the project to ensure it is found in the list of all cordova plugins and for the specific platforms supported. 
 
-## Testing tools
+1. All published plugins to be shared should specify the `ecosystem:cordova` keyword to ensure it's always returned in the cordova plugins search results.
+2. Cordova platform keywords can be specified to indicate which are supported with a `cordova-<platform>` syntax.
 
-_tools to help you, paramedic, jasmine, jshint_
+For instance, a `package.json` may have the following keywords specified:
 
-## Demo
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-ios",
+        "cordova-windows"
+    ]
 
-_paramedic running tests against a plugin_
+> **Note:** Plugman's `createpackagejson` will do step #2 for you but if you didn't use that method, you can simply edit your `package.json` manually.
 
-## Exercise: 
+## Plugin Dependencies
 
-> write and run some simple tests for a plugin
+Specify the Cordova-related dependencies for your plugin in the `package.json` file to provide guidance to the Cordova CLI when fetching from npm.
+To specify dependencies for a plugin, alter the `engines` element in `package.json` to include a `cordovaDependencies` object with the following structure:
 
-<!--In this step we'll add a [Framework7 Searchbar]((http://framework7.io/docs/searchbar.html) component to our results page to allow the user to search/filter the results with a matching string
-entered by the user. This component is used to filter results *after* they are received. 
+    "engines": {
+        "cordovaDependencies": {
+            "1.0.0": { "cordova-android": "<3.0.0"},
+            "2.1.0": { "cordova-android": ">4.0.0"}
+        }
+    }
 
-Below is the result on iOS and Android respectively:
 
-   <img class="screenshot-md2" src="images/ios-searchbar.png"/>
-   <img class="screenshot-md2" src="images/android-searchbar.png"/>
+## Publishing with npm
     
-## Steps
-1. Begin by opening your browser and reviewing the [Framework7 documentation](http://framework7.io/docs/searchbar.html) for the `searchbar` component.
-1. Open `www/index.html` and locate this `results` template script tag since we'll be adding this new component to that page:
-            ```
-            <script type="text/template7" id="results">
-            ```
+    $ npm adduser # (only if you don't have an account in the npm registry yet)
+    $ npm publish /path/to/your/plugin
 
-2. The `searchbar` needs to be placed somewhere within a `.page` class and just before a `.page-content` class. In the results template, locate the `<div>` with the `.page` class and associated `.navbar`. 
-Insert the following `searchbar` `<form>` element which contains an input field with a `clear` button just 
-before the `<div>` with the `.page-content` class as shown in the image directly below it:
+Or from within the top-level of the plugin project you can simply run:
+    
+    $ npm publish . 
 
-          <form class="searchbar">
-              <div class="searchbar-input">
-                  <input type="search" placeholder="Search">
-                  <a href="#" class="searchbar-clear"></a>
-              </div>      
-          </form>
+## Publishing with Plugman
 
-   <img class="screenshot2" src="images/search-loc.png"/>
+    $ plugman publish myPluginDirectoryPath
 
-2. Next, open the `www/js/myApp.js` file and add the following code block just above the `myApp.onPageInit('details', function(page) {..}))` function. 
-This new function will run when the `results` page initializes and will initialize the `searchbar` component
-with the parameters shown. Each of these parameters is set to a class name that you will apply in the HTML
-elements to mark the elements that should be used for each scenario (what list to search, what data to search, 
-what to display when found and not found etc): 
 
-       myApp.onPageInit('results', function(page) {
-           var mySearchbar = myApp.searchbar('.searchbar', {
-               searchList: '.list-block-search',
-               searchIn: '.item-content',
-               found: '.searchbar-found',
-               notFound: 'searchbar-not-found'
-           })
-       })   
-       
-       
-   **Parameters**<br>
-   
-    - searchList - the class selector for the list containing the data to search
-    - searchIn - set to the class selector for the content to be searched. Defaults to `.item-title` otherwise.
-    - found - the class selector for the element or block to display with the matches found
-    - notFound - the class selector for the element to display in the case where no matches were found
-   
-    >These parameters can also be initialized inline the HTML with `data-*` attributes. 
-  See the [Framework7 docs on Pages](http://framework7.io/docs/pages.html) to learn more about the events that can be handled for a page.
 
-3. Now go back into `www/index.html`  and add the `searchbar-found` class to the `<div>` element containing 
-the list block, since it will create a filtered list using those same elements with the matched items:
-
-        <div class="list-block media-list list-block-search searchbar-found">
-        
-4. Next add a new `<div>` element to show a message when no results are found, ensuring you specify the same class name you set in the 
-searchbar init function. Add this new `<div>` just after the searchbar form (class name is 'searchbar-not-found' in this case).
-
-        <div class="content-block searchbar-not-found">
-               No matches found
-        </div>
-
-2. Lastly, add a new `<div>` element with the `searchbar-overlay` class to enable a dark overlay effect for the page content when the search bar is active. 
-Add it just after the `searchbar-not-found` `<div>` added above.
-
-        <div class="searchbar-overlay"></div>
-
--->
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

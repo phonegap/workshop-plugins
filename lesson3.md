@@ -1,95 +1,55 @@
 ---
 layout: module
-title: Module 3&#58; Plugin Publishing
+title: Module 3&#58; Plugin Implementation
 ---
 
-_approximate duration : 15 minutes_
+_approximate duration : 30 minutes_
 
-## Sharing Plugins
+## Overview
+- what domain knowledge is required?
+- what can plugin code do?
 
-## Publishing with npm
+## Demo - Sidebar Plugin
+<!-- TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
 
-## Publishing with Plugman
 
-<!--
- <img class="screenshot" src="images/instagram-off.png"/>
- 
+## Plugin Parts
 
-When building PhoneGap apps you can easily check the current status of the connection using the [Cordova Network Information Plugin](https://github.com/apache/cordova-plugin-network-information). You can also setup event listeners to be notified when the 
-connection goes from online to offline and vice versa and take action then accordingly. 
+1. JavaScript interface (what developers call)
+1. A native interface (ie: ObjC or Java) (where the work is done)
+1. Cordova provides:
+  - the plumbing to get your js arguments into native
+  - the callbacks so native code is run asynchronously
+1. App developer provided *callback* functions are called to get the result
 
-In this lesson you will learn how to use this plugin to detect and listen for network changes and pop up a toast
-notification to the user. 
+## Passing Data 
+How do we pass data from `js->objc js->java java->js objc->js` ?
 
-## Requirements
-Before you can code this feature, you'll first need to add the [Cordova Network Information Plugin](https://github.com/apache/cordova-plugin-network-information) to your project since it is not yet used in the Star Track base
-app template. 
+    cordova.exec(successCallback, // function to call with results on success
+             errorCallback,   // function to call with error
+             strClassName,    // String name of class in native code
+             strMethodName,   // String name of function
+             ["a","b",... ] ); // array of string args, possibly empty
 
-1. Open your terminal and use the PhoneGap CLI to add it now (the `--save` parameter will save the plugin to your `config.xml` file): 
 
-       phonegap plugin add cordova-plugin-network-information --save
+## iOS
 
-   >Be sure to visit the [Cordova Network Information Plugin Docs](https://github.com/apache/cordova-plugin-network-information) to learn about any platform quirks and more things you can do 
-  with this plugin.
+1. Cordova will look for a cordova plugin interface matching `strClassName`
+1. Cordova will look for a method matching `strMethodName` on the interface above, and call it, passing in an object which 
+contains the arguments as well as a `callback_id` which can be used to signal success of failure.  This `callback_id` will then be routed to the correct callback.
 
-## Steps
-- Open `www/index.html` and add a wifi icon to the `index` page `navbar` on the right side to indicate 
-the current connection status. [Font Awesome](http://fontawesome.io/icons/) is already included in the project and has an icon you can use
-with the name `fa-wifi`.
+  `- (void)strMethodName:(CDVInvokedUrlCommand*)command`
 
-  First locate the `navbar` defined for the `index` page in the `www/index.html` file. You can search for `navbar` and find the one
-  with the attribute `data-page="index"`. Add the right side definition as shown in the snippet below. (The whole navbar definition is
-  included for easier reference). 
-    
-  >You should always ensure you wait until the `deviceready` event is fired before using any Cordova native plugins.   
+## Android
 
-- Next we'll add the functions for the `onOffline` and `onOnline` handlers. They will both display
-a toast style notification to indicate the status change and set the colors of the wifi icon on the main
-page for visual notification. (See the [Framework7 notification docs](http://framework7.io/docs/notifications.html) 
-for more details on using these toast style notifications in your apps).    
+1. Cordova will look for cordova plugin interface matching strClassName
+1. Cordova android code will call the plugin's `execute` method and pass an action of 'strMethodName' plus the arguments
 
-   - Add the function for the `onOffline` handler just below the `deviceready` function:     
-   
-            function onOffline() {
-                offline = true;
-                myApp.addNotification({
-                   title: 'Connection Status',
-                   message: 'A previously connected device has gone offline.'
-                });
-                if (isIos) $$('.fa-wifi').removeClass('color-green').addClass('color-gray');
-                   else $$('.fa-wifi').removeClass('color-white').addClass('color-gray');            
-            }
+  `public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException`
 
-  - Add the function for the `onOnline` handler just below the above:
+### Exercise 4
 
-            function onOnline() {
-                // Show a toast notification to indicate the change
-                myApp.addNotification({
-                    title: 'Connection Status',
-                    message: 'A previously connected device has come back online'
-                });
-                // Set the wifi icon colors to reflect the change
-                if (isIos) $$('.fa-wifi').removeClass('color-gray').addClass('color-green');
-                else $$('.fa-wifi').removeClass('color-gray').addClass('color-white');    
-                offline = false;
-            }
-    
-## Run it
-The end result should look like the following where you see a notification displayed when you go offline and
-online. 
-
-   <img class="screenshot2" src="images/ios-network-detect.png"/>
-  
-## Extra Credit
-Requiring users to have to close the notifications is less than ideal. Instead, check out the additional parameters available
-in Framework7 notifications that could help make it a better experience. 
-  
->At this point you could further handle the experience as desired. You may want to store some data in local storage
-or another on-device database to allow them to use the app with the cached data. Your app may also have data
-that needs to be saved off to be synced to a server when you're back online. The goal is to provide the most
-optimal user experience.  
-
--->
+Now write a plugin that passes data round trip using the echo plugin template, using the information learned in the above walk-thru. 
 
 
 <div class="row" style="margin-top:40px;">
