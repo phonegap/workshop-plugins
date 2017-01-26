@@ -13,7 +13,12 @@ then I created a new project, installed the plugin and step debugged the native 
 -->
 
 ## Plugin Discovery
-You can discover Cordova plugins directly in [npm](http://nmpjs.org) by searching `ecosystem:cordova`.
+Plugins are used to extend the native functionality exposed by the PhoneGap native-app container. Examples of plugins include those that allow to access the Camera, Battery Status, Push Notifications, Geolocation, 
+Barcode Scanning, Native Social Sharing and many more. The [npm registry](http://nmpjs.org) is used to find plugins currently available to the community. You can discover the latest by searching `ecosystem:cordova`.
+
+>Plugins may often be prefixed with a naming convention depending on the goal of the plugin. All of the core supported Cordova plugins are prefixed 
+with `cordova-*`, while those specifically created by the PhoneGap team are prefixed with `phonegap-*`. Ionic has a [marketplace for Ionic specific Cordova plugins](https://market.ionic.io/plugins), with most of those
+prefixed with `ionic-*`. Telerik also has a [plugin marketplace](http://plugins.telerik.com/cordova) to be aware of with their verified Cordova plugins that may or may not be found in the official npm plugin registry. 
 
 <!--Demo using npm as a cordova plugin registry-->
 

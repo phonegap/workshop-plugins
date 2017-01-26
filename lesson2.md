@@ -21,46 +21,66 @@ _approximate duration : 15 minutes_
         `$ phonegap-plugin-create ~/MyNewPlugin MyNewPlugin org.mycompany.myplugin`
 
 ## Plugin Project Structure 
+
 Once you create your plugin project using the **phonegap-plugin-template** tool, you can `cd` into the new project and you will see a structure that looks like the following:
+
 ![](images/plugin-structure.png)
 
 You can open each file in your favorite editor and start modifying with the relevant parts for your plugin. In the next few sections we'll cover each of the pieces that make up a plugin. 
 
 ## Plugin XML Definition
 
-Plugins are defined using a top-level file named `plugin.xml` within your plugin project. Open the one in your template project and note the pieces described below. 
+Plugins are defined using a top-level file named `plugin.xml` within your plugin project. Open the `plugin.xml` file created in your template project and note the sections described below. 
 
-  - Plugin Metadata
+- **Plugin Metadata** - the attributes defined on the plugin element are the `id` and `version` with the 1st child element defining the plugin name.   
 
-    <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-           id="org.devgirl.testplugin" version="0.0.1">
-    <name>MyAwesomePlugin</name>
+      <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+            id="org.devgirl.testplugin" version="0.0.1">
+      <name>MyAwesomePlugin</name>
 
-  - Shared JavaScript code
- 
-    <js-module src="www/template.js" name="Template">
-        <clobbers target="Template" />
-    </js-module>
+- **JavaScript code** - the JavaScript interface is defined in the `<js-module>` element. This is the interface called by the app developer to invoke the native platform code for the plugin. 
 
-  - **Platform Code* Definition*
+      <js-module src="www/template.js" name="Template">
+          <clobbers target="Template" />
+      </js-module>
 
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Echo" >
-                <param name="android-package" value="org.apache.cordova.test.Echo"/>
+- **Platform Code* Definition** - a `<platform`> element is defined for each platform supported by a plugin. The `<feature>` element specifies the name to use for the plugin service and maps it to the
+  class name for each platform. In the case of Android it will need to be prefixed with the package id as shown below. This mapping is used to 
+  locate the code to run when the service is called. 
+
+  **Android** <br>
+
+      <platform name="android">
+          <config-file target="res/xml/config.xml" parent="/*">
+              <feature name="Echo" >
+                  <param name="android-package" value="org.apache.cordova.test.Echo"/>
+              </feature>
+          </config-file>
+          <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/test" />
+      </platform>
+
+  **iOS** <br>
+
+      <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Echo">
+                <param name="ios-package" value="CDVEcho"/>
             </feature>
         </config-file>
-        <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/test" />
-    </platform>
+        <source-file src="src/ios/CDVEcho.m"/>
+      </platform>
 
-  - Dependencies
-  The `<dependency>` tag allows you to specify other plugins on which the current plugin depends. The plugins are referenced by their unique npm ids or by github url.
+
+- **Dependencies** - the `<dependency>` tag allows you to specify other plugins on which the current plugin depends. The plugins are referenced by their unique npm ids or by github url.
+
+      <dependency id="cordova-plugin-someplugin" url="https://github.com/myuser/someplugin" />
+      <dependency id="cordova-plugin-someplugin" version="1.0.1">
 
 ### Exercise 3
 
-1. Create a plugin using the above tools
-2. Add dependencies to use two additional plugins
-3. Install your new plugin to a PhoneGap or Cordova app project
+1. Create a plugin 
+2. Add dependencies to two additional plugins
+3. Add your new plugin to a PhoneGap or Cordova app project
 
 <!-- Add plugin validation? -->
 

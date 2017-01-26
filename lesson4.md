@@ -5,7 +5,7 @@ title: Module 4&#58; Plugin Publishing
 
 _approximate duration : 15 minutes_
 
-## Searchability 
+## Plugin Searchability
 
 You can add keywords to your plugin's `package.json` file at the root of the project to ensure it is found in the list of all cordova plugins and for the specific platforms supported. 
 
@@ -36,16 +36,21 @@ To specify dependencies for a plugin, alter the `engines` element in `package.js
     }
 
 
-## Publishing with npm
-    
+## Publishing your Plugin
+When you are ready to share your plugin with the community, you can do so using either npm or the plugman tool. 
+
+### Using npm
+You must have a user on the npm registry to publish, if you don't already have one you can create one using the `adduser` command as shown below:    
+
     $ npm adduser # (only if you don't have an account in the npm registry yet)
     $ npm publish /path/to/your/plugin
 
 Or from within the top-level of the plugin project you can simply run:
-    
+
     $ npm publish . 
 
-## Publishing with Plugman
+### Using Plugman
+While the `npm` method is the preferred way to publish your plugins, you should be aware that you could also use the plugman tool to do so as well.
 
     $ plugman publish myPluginDirectoryPath
 

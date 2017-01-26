@@ -3,53 +3,84 @@ layout: module
 title: Module 3&#58; Plugin Implementation
 ---
 
-_approximate duration : 30 minutes_
+_approximate duration : 20 minutes_
 
-## Overview
-- what domain knowledge is required?
-- what can plugin code do?
+## Plugin Components
+To review, a plugin is made up of the following components:
 
-## Demo - Sidebar Plugin
-<!-- TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
+1. A **JavaScript interface** - _what developers call_
 
+1. A **native interface** written in ObjC, Swift, Java or C# for each supported platform - _where the work is done_
 
-## Plugin Parts
+1. Built-in **Cordova bridge** that provides:
+  - the plumbing to get your JavaScript arguments mapped to the native interfaces
+  - the callbacks to ensure the native code is run asynchronously
 
-1. JavaScript interface (what developers call)
-1. A native interface (ie: ObjC or Java) (where the work is done)
-1. Cordova provides:
-  - the plumbing to get your js arguments into native
-  - the callbacks so native code is run asynchronously
-1. App developer provided *callback* functions are called to get the result
+## Plugin Workflow
 
-## Passing Data 
-How do we pass data from `js->objc js->java java->js objc->js` ?
+The `cordova exec` function is used to call the native interface and pass the required parameters to invoke the native interface with optional arguments needed. 
 
     cordova.exec(successCallback, // function to call with results on success
              errorCallback,   // function to call with error
-             strClassName,    // String name of class in native code
+             strClassName,    // String name of Class in native code
              strMethodName,   // String name of function
              ["a","b",... ] ); // array of string args, possibly empty
 
 
-## iOS
+<!-- App developer provided *callback* functions -->
 
-1. Cordova will look for a cordova plugin interface matching `strClassName`
-1. Cordova will look for a method matching `strMethodName` on the interface above, and call it, passing in an object which 
+#### Cordova Bridge Mapping for iOS
+
+1. Cordova will look for a Cordova plugin interface matching `strClassName`
+1. Cordova will look for a method matching `strMethodName` in the ios plugin code and call it, passing in an object which 
 contains the arguments as well as a `callback_id` which can be used to signal success of failure.  This `callback_id` will then be routed to the correct callback.
 
-  `- (void)strMethodName:(CDVInvokedUrlCommand*)command`
+   **Example class signature**<br>
+   `- (void)strMethodName:(CDVInvokedUrlCommand*)command {...}`
 
-## Android
+#### Cordova Bridge Mapping for Android
 
-1. Cordova will look for cordova plugin interface matching strClassName
-1. Cordova android code will call the plugin's `execute` method and pass an action of 'strMethodName' plus the arguments
+1. Cordova will look for the Cordova plugin interface matching `strClassName`
+1. Cordova will call the `execute` method in the android plugin code and pass an action of `strMethodName` with optional arguments
 
-  `public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException`
+   **Example class signature**<br> 
+   `public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {...}`
+
+### Visual Example
+The picture below illustrates how the JavaScript interface specifically maps to each native Class:
+
+![](images/plugin-mapping.png)
+
+### Exercise 3
+
+Open the plugin created in the previous step and `exec` function. Notice the arguments passed to it:
+    <!--
+    echo: function(successCallback, errorCallback, message, forceAsync) {
+        var action = 'echo';
+        if (forceAsync) {
+            action += 'Async';
+        }
+        exec(successCallback, errorCallback, 'Echo', action, [message]);
+    }-->
+
+
+- The first and second parameters are the success and error callback functions
+- The first parameter calls the `Echo` _service_, a **Class** name
+- The second requests the `echo` _action_, a **method** within that class
+- The third is an array of arguments containing the echo _string_, which is the `echo` method's first parameter.
+
+Also, note that in the `plugin.xml` feature definition within each platform, the name matches the name passed in as the _service_ name.
+
+![](images/plugin-xml-feature.png)
+
+## Demo - Data Passing
+<!-- TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
+TODO: Explain data passing to/from
+
 
 ### Exercise 4
 
-Now write a plugin that passes data round trip using the echo plugin template, using the information learned in the above walk-thru. 
+Now update your plugin code to pass data round trip using the information learned thus far. 
 
 
 <div class="row" style="margin-top:40px;">

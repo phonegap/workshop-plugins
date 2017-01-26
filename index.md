@@ -33,7 +33,7 @@ the basic requirements for a PhoneGap plugin all the way to testing and publishi
 
 - Please create an issue [here](https://github.com/phonegap/workshop-plugins/issues) if you run into any problems or if you have feedback.
 
-- You can also use the Comments section at the bottom of each module to ask a question or report a problem.
+- You can also use the _Comments_ section at the bottom of each module to ask a question or report a problem.
 
 - You can contact us on Twitter:
 
