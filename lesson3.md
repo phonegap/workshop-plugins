@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 3&#58; Plugin Implementation
+title: Lesson 3&#58; Plugin Implementation
 ---
 
 _approximate duration : 15 minutes_
@@ -91,7 +91,6 @@ TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plu
 >If you're running on iOS, you can add the cordova-plugin-console olugin to see the logged output
 
 ### Bonus Exercise 
-
 Update your plugin signature to pass additional data using the information learned thus far. 
 
 ### Resources

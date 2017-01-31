@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 5&#58; Plugin Debugging
+title: Lesson 5&#58; Plugin Debugging
 ---
 _approximate duration : 5 minutes_
 

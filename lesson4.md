@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 4&#58; Plugin Definition
+title: Lesson 4&#58; Plugin Definition
 ---
 _approximate duration : 15 minutes_
 
@@ -11,7 +11,7 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within yo
 - **Plugin Metadata** - the attributes defined on the plugin element are the `id` and `version` with the 1st child element defining the plugin name.   
 
       <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-            id="org.devgirl.testplugin" version="0.0.1">
+            id="my-awesome-plugin" version="0.0.1">
       <name>MyAwesomePlugin</name>
 
 - **JavaScript code** - the JavaScript interface is defined in the `<js-module>` element. This is the interface called by the app developer to invoke the native platform code for the plugin. The name specified in the target is used to access the plugin functions from your Cordova app (ie: `Template.echo()`)

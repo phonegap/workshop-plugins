@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 2&#58; Plugin Scaffolding
+title: Lesson 2&#58; Plugin Template
 ---
 _approximate duration : 10 minutes_
 
@@ -18,7 +18,7 @@ _approximate duration : 10 minutes_
 
         For example:<br>
 
-        `$ phonegap-plugin-create ~/MyNewPlugin MyNewPlugin org.mycompany.myplugin`
+        `$ phonegap-plugin-create ~/MyAwesomePlugin MyAwesomePlugin my-awesome-plugin`
 
 ## Plugin Project Structure 
 
@@ -31,13 +31,12 @@ You can open each file in your favorite editor and start modifying with the rele
 ### Exercise 3
 
 1. Create a new plugin using the `phonegap-plugin-template`
-2. Add your new plugin to a PhoneGap or Cordova app project 
+2. Open the plugin.xml and uncomment the Android and iOS platform specific sections
+3. Add your new plugin to a PhoneGap or Cordova app project 
 
->Tip: Use the --link flag when you add the plugin locally during developmet and Cordova will create a symbolic link to it. This way any source updates will automatically be available to your project. 
+>Tip: Use the --link flag when you add the plugin locally during developmet and Cordova will create a symbolic link to it. This way any source updates will automatically be available to your project ie: `$ cordova plugin add --link ~/path/to/plugin`
 
-        `$ cordova plugin add --link ~/path/to/plugin`
-
->When removing a locally added plugin, use the package id - ie: `org.domain.myPlugin` (you can retrieve the list of them by typing `phonegap plugin list`.)
+>When removing a locally added plugin, specify the plugin id - ie: `my-awesome-plugin`. You can retrieve the list of plugins added to a project by typing `phonegap plugin list`
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

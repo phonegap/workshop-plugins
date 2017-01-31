@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 1&#58; Plugin Discovery and Installation
+title: Lesson 1&#58; Plugin Discovery and Installation
 ---
 
 _approximate duration : 10 minutes_

@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 7&#58; Plugin Testing
+title: Lesson 7&#58; Plugin Testing
 ---
 
 _approximate duration : time permitting_
