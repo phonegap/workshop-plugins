@@ -3,7 +3,7 @@ layout: module
 title: Module 1&#58; Plugin Discovery and Installation
 ---
 
-_approximate duration : 5 minutes_
+_approximate duration : 10 minutes_
 
 <!--
 for cordova-plugin-device, I showed the repo, then I explained the contents of plugin.xml
@@ -52,7 +52,13 @@ Plugins are added and removed using the [Cordova](https://www.npmjs.com/package/
 
 ### Exercise 2
 
-Take a moment and try out some plugin commands with one of your Cordova or PhoneGap projects now to see how you can add, remove and list plugins.
+1. Create a simple plugin using an existing plugin's `plugin.xml` file as a resource (for instance cordova-plugin-device)
+2. Add dependencies to two additional plugins
+3. Add your new plugin to a PhoneGap or Cordova app project 
+
+>Tip: You can use the --link flag when you add the plugin locally during developmet and Cordova will create a symbolic link to it. This way any source updates will automatically be available to your project. 
+
+        `$ cordova plugin add --link ~/path/to/plugin`
 
 >If you need to create a project first with the CLI, do so with the following commands, from the Cordova or PhoneGap CLI respectively: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and run the plugin commands listed above.
 

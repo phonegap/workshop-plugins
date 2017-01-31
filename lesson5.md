@@ -1,29 +1,22 @@
 ---
 layout: module
-title: Module 5&#58; Plugin Testing
+title: Module 5&#58; Plugin Debugging
 ---
+_approximate duration : 5 minutes_
 
-_approximate duration : time permitting_
+## iOS 
+- Safari Remote Debugging (Develop Menu)
+- Xcode
 
-## Apache Cordova Plugin Testing
-
-## PhoneGap Plugin Testing
-
-## Testing tools
-
-_tools to help you, paramedic, jasmine, jshint_
-
-## Demo
-
-_paramedic running tests against a plugin_
-
-### Exercise 5 
-
-> write and run some simple tests for a plugin
+## Android 
+- Chrome Remote Debugging (`chrome://inspect`)
+- adb logcat
 
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
 <a href="lesson4.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="lesson6.html" class="btn btn-default pull-right">Next <i class="glyphicon
+glyphicon-chevron-right"></i></a>
 </div>
 </div>

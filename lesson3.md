@@ -3,7 +3,7 @@ layout: module
 title: Module 3&#58; Plugin Implementation
 ---
 
-_approximate duration : 20 minutes_
+_approximate duration : 15 minutes_
 
 ## Plugin Components
 To review, a plugin is made up of the following components:
@@ -51,23 +51,20 @@ The picture below illustrates how the JavaScript interface specifically maps to 
 
 ![](images/plugin-mapping.png)
 
-### Exercise 4
-
 Open the plugin created in the previous step and `exec` function. Notice the arguments passed to it:
-    <!--
-    echo: function(successCallback, errorCallback, message, forceAsync) {
-        var action = 'echo';
-        if (forceAsync) {
-            action += 'Async';
+
+        echo: function(successCallback, errorCallback, message, forceAsync) {
+            var action = 'echo';
+            if (forceAsync) {
+                action += 'Async';
+            }
+            exec(successCallback, errorCallback, 'Echo', action, [message]);
         }
-        exec(successCallback, errorCallback, 'Echo', action, [message]);
-    }-->
 
-
-- The first and second parameters are the success and error callback functions
-- The first parameter calls the `Echo` _service_, a **Class** name
-- The second requests the `echo` _action_, a **method** within that class
-- The third is an array of arguments containing the echo _string_, which is the `echo` method's first parameter.
+- The first and second parameters are _success_ and _error_ callback functions
+- The third parameter calls the `Echo` Class in the native platform (also known as the _service_) for the plugin
+- The fourth parameter requests the _action_ to execute (`echo`) within the service class. On iOS this maps direction to a method name, for Android it is passed in as the 1st parameter in the `execute()` method
+- The last specifies any required arguments to pass to the `echo()` method. In this case it's just a _string_ to be printed
 
 Also, note that in the `plugin.xml` feature definition within each platform, the name matches the name passed in as the _service_ name.
 
@@ -76,11 +73,29 @@ Also, note that in the `plugin.xml` feature definition within each platform, the
 <!--## Demo - Data Passing
 TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
 
+### Exercise 4
+1. Update your Cordova app to call the plugin's `echo` function
+2. Build and run your app 
+        
+        `$ phonegap run ios` 
+        `$ phonegap run android`
 
+        or 
+
+        `$ cordova platform add ios`
+        `$ cordova run ios`
+
+        `$ cordova platform add android`
+        `$ cordova run android`
+
+>If you're running on iOS, you can add the cordova-plugin-console olugin to see the logged output
 
 ### Bonus Exercise 
 
-Update your plugin code to pass additional data round trip using the information learned thus far. 
+Update your plugin signature to pass additional data using the information learned thus far. 
+
+### Resources
+Check out the official [Apache Cordova Plugin Development Guide](http://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html) for more details on all of the above. 
 
 
 <div class="row" style="margin-top:40px;">
