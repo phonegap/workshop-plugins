@@ -51,7 +51,7 @@ The picture below illustrates how the JavaScript interface specifically maps to 
 
 ![](images/plugin-mapping.png)
 
-### Exercise 3
+### Exercise 4
 
 Open the plugin created in the previous step and `exec` function. Notice the arguments passed to it:
     <!--
@@ -78,9 +78,9 @@ Also, note that in the `plugin.xml` feature definition within each platform, the
 TODO: Explain data passing to/from
 
 
-### Exercise 4
+### Bonus Exercise 
 
-Now update your plugin code to pass data round trip using the information learned thus far. 
+Update your plugin code to pass additional data round trip using the information learned thus far. 
 
 
 <div class="row" style="margin-top:40px;">

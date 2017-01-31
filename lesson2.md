@@ -12,7 +12,7 @@ _approximate duration : 15 minutes_
 
         `$ npm install -g phonegap/phonegap-plugin-template`
 
-    2. To create a new plugin project, tyep the following command and specify a file path, plugin name and id 
+    2. To create a new plugin project, type the following command, specifying your desired a file path, plugin name and id 
 
         `$ phonegap-plugin-create PATH NAME ID`
 
@@ -38,13 +38,14 @@ Plugins are defined using a top-level file named `plugin.xml` within your plugin
             id="org.devgirl.testplugin" version="0.0.1">
       <name>MyAwesomePlugin</name>
 
-- **JavaScript code** - the JavaScript interface is defined in the `<js-module>` element. This is the interface called by the app developer to invoke the native platform code for the plugin. 
+- **JavaScript code** - the JavaScript interface is defined in the `<js-module>` element. This is the interface called by the app developer to invoke the native platform code for the plugin. The name specified in the target is used to access the plugin functions from your Cordova app (ie: `Template.echo()`)
 
       <js-module src="www/template.js" name="Template">
           <clobbers target="Template" />
       </js-module>
 
-- **Platform Code* Definition** - a `<platform`> element is defined for each platform supported by a plugin. The `<feature>` element specifies the name to use for the plugin service and maps it to the
+
+- **Platform Code Definition** - a `<platform`> element is defined for each platform supported by a plugin. The `<feature>` element specifies the name to use for the plugin service and maps it to the
   class name for each platform. In the case of Android it will need to be prefixed with the package id as shown below. This mapping is used to 
   locate the code to run when the service is called. 
 
@@ -76,11 +77,20 @@ Plugins are defined using a top-level file named `plugin.xml` within your plugin
       <dependency id="cordova-plugin-someplugin" url="https://github.com/myuser/someplugin" />
       <dependency id="cordova-plugin-someplugin" version="1.0.1">
 
-### Exercise 3
+>See [the cordova-plugin-file-transfer plugin](https://github.com/apache/cordova-plugin-file-transfer/blob/master/plugin.xml) for an example
+
+
+### Exercise 2
 
 1. Create a plugin 
 2. Add dependencies to two additional plugins
-3. Add your new plugin to a PhoneGap or Cordova app project
+3. Add your new plugin to a PhoneGap or Cordova app project 
+
+>Tip: Use the --link flag when you add the plugin locally during developmet and Cordova will create a symbolic link to it. This way any source updates will automatically be available to your project. 
+
+        `$ cordova plugin add --link ~/path/to/plugin`
+
+
 
 <!-- Add plugin validation? -->
 
