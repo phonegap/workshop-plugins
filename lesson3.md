@@ -73,9 +73,9 @@ Also, note that in the `plugin.xml` feature definition within each platform, the
 
 ![](images/plugin-xml-feature.png)
 
-## Demo - Data Passing
-<!-- TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
-TODO: Explain data passing to/from
+<!--## Demo - Data Passing
+TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
+
 
 
 ### Bonus Exercise 
