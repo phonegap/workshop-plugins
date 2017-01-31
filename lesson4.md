@@ -70,6 +70,12 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within yo
 ### Resources
 Check out the complete [plugin.xml specification](http://cordova.apache.org/docs/en/latest/plugin_ref/spec.html) for a complete list of supported values. 
 
+<!--## Demo - Data Passing
+TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
+
+### Bonus Exercise 
+Update your plugin signature to pass additional parameters and code handling on the native side for them using the information learned thus far. 
+
 
 <!-- Add plugin validation? -->
 

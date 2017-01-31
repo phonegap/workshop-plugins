@@ -73,11 +73,6 @@ Open the JavaScript interface for your plugin (in `www/template.js`) and find th
 ###### plugin.xml snippet
  ![](images/plugin-xml-feature.png)
 
-<!--## Demo - Data Passing
-TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
-
-### Bonus Exercise 
-Update your plugin signature to pass additional parameters using the information learned thus far. 
 
 ### Resources
 Check out the official [Apache Cordova Plugin Development Guide](http://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html) for more details on all of the above. 
