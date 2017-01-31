@@ -34,7 +34,7 @@ The `cordova exec` function is used to call the native interface and pass the re
 1. Cordova will locate the ios platform interface matching `strServiceName` (based on configured mapping)
 1. Cordova will look for a method matching `strActionName` in the ios plugin interface and call it, passing in an object containing the necessary arguments and callback info
 
-   **Example class signature**<br>
+   **Example method signature**<br>
    `- (void)strActionName:(CDVInvokedUrlCommand*)command {...}`
 
 <br>
@@ -44,7 +44,7 @@ The `cordova exec` function is used to call the native interface and pass the re
 1. Cordova will locate the android platform interface matching `strServiceName` (based on configured mapping)
 1. Cordova will locate the `execute()` method in the android plugin code and pass in the `strActionName`, optional arguments and callback info
 
-   **Example class signature**<br> 
+   **Example method signature**<br> 
    `public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {...}`
 
 ### Visual Example
