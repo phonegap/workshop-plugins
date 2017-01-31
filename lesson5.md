@@ -8,6 +8,8 @@ _approximate duration : 5 minutes_
 - Safari Remote Debugging (Develop Menu)
 - Xcode
 
+>If you're running on iOS, you can add the cordova-plugin-console olugin to see the logged output in Xcode
+
 ## Android 
 - Chrome Remote Debugging (`chrome://inspect`)
 - adb logcat

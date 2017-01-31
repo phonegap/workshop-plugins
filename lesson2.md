@@ -31,7 +31,7 @@ You can open each file in your favorite editor and start modifying with the rele
 ### Exercise 3
 
 1. Create a new plugin using the `phonegap-plugin-template`
-2. Open the plugin.xml and uncomment the Android and iOS platform specific sections
+2. Open the `plugin.xml` and uncomment the Android and iOS `<platform>` specific sections
 3. Add your new plugin to a PhoneGap or Cordova app project 
 
 >Tip: Use the --link flag when you add the plugin locally during developmet and Cordova will create a symbolic link to it. This way any source updates will automatically be available to your project ie: `$ cordova plugin add --link ~/path/to/plugin`
