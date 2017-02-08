@@ -70,12 +70,14 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within th
   >See [the cordova-plugin-file-transfer plugin](https://github.com/apache/cordova-plugin-file-transfer/blob/master/plugin.xml) for an example
 
 ### Exercise
-1. Update your Cordova app to invoke your plugin's `echo()` function
+1. Make a call to your echo plugin from your Cordova app. Open the `www/index.js` file and add the following at the end of the `receivedEvent` function:
 
-    **Hint:**
-   `Template.echo(function(result){alert("Success: " +result)},function(e){alert("Fail " + e)},"Helloooo Adobe!",true)`
+        Template.echo(function(result){ alert("Echo Success: " +result) },
+                  function(e){ alert("Echo Fail " + e) },"Hello Adobe!",true)
 
-2. Build and run your app
+   >The callback functions were included inline for simplicity.
+
+2. Build and run your app (if you haven't added a platform yet you will need to do so first)
 
        $ cordova run ios
 

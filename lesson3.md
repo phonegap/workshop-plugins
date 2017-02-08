@@ -15,7 +15,7 @@ A plugin is made up of the following components:
 1. A built-in **Cordova bridge** that provides:
 
    - plumbing to *map the JavaScript arguments* to the native interfaces
-   - callback handling to ensure the native code routes back the result to the proper callback depending on success or failure
+   - **callback handling** to ensure the right callback is routed to in the case of success or failure
 
 ## JavaScript Bridge
 The `exec()` function is used by Cordova to call the native interface and pass the required parameters

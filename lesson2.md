@@ -26,11 +26,14 @@ Once you create your plugin project using the **phonegap-plugin-template** tool,
 
 ### Exercise 
 
-1. Create a new plugin using the `phonegap-plugin-create` command (preferably at the same directory level as your `myApp` project but not within it)
+1. Create a **new plugin** using the `phonegap-plugin-create` command. 
+
+   >**NOTE:** Use a different plugin name and id like below and create your plugin at the same directory level as your `myApp` project but not within it.
+
 
         $ phonegap-plugin-create MyEchoPlugin myechoplugin my-echo-plugin
 
-2. Open the `plugin.xml` and uncomment these Android and iOS `<platform>` specific sections:
+2. Now open the `plugin.xml` and uncomment these Android and iOS `<platform>` specific sections (we will need this to test with later):
 
         <platform name="android">
             <config-file target="res/xml/config.xml" parent="/*">
@@ -38,7 +41,6 @@ Once you create your plugin project using the **phonegap-plugin-template** tool,
                     <param name="android-package" value="org.apache.cordova.test.Echo"/>
                 </feature>
             </config-file>
-
             <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/test" />
         </platform>
 
