@@ -20,10 +20,6 @@ Barcode Scanning, Native Social Sharing and many more. The [npm registry](http:/
 with `cordova-*`, while those specifically created by the PhoneGap team are prefixed with `phonegap-*`. Ionic has a [marketplace for Ionic specific Cordova plugins](https://market.ionic.io/plugins), with most of those
 prefixed with `ionic-*`. Telerik also has a [plugin marketplace](http://plugins.telerik.com/cordova) to be aware of with their verified Cordova plugins that may or may not be found in the official npm plugin registry. 
 
-<!--Demo using npm as a cordova plugin registry-->
-
-### Exercise
-
 Navigate to [npmjs.org](http://npmjs.org) and do your own search for Cordova plugins now to see what you can find. Does it look like the picture below? Scroll through and take a look at all of the different plugins already available. 
 
 ![](images/npm-plugin-search.png)

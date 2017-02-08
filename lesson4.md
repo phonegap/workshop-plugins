@@ -77,7 +77,7 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within th
 
 2. Build and run your app
 
-    $ cordova run ios
+       $ cordova run ios
 
 ![](images/echo-run.png)
 

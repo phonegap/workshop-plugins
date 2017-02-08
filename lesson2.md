@@ -64,8 +64,11 @@ Once you create your plugin project using the **phonegap-plugin-template** tool,
 
    >When removing a locally added plugin, specify the plugin id - ie: `my-echo-plugin`. You can retrieve the list of plugins added to a project by typing `phonegap plugin list`.
 
+5. If you ran the app now, it wouldn't actually do anything with our plugin yet since we haven't added any code to invoke it from our app.
+
+<!--
 ##### Creating a Project for Testing
-If you don't have a Cordova or PhoneGap project handy for testing with your new plugin, you can simply create a new one using the Cordova or PhoneGap CLI: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and add your plugin.
+If you don't have a Cordova or PhoneGap project handy for testing with your new plugin, you can simply create a new one using the Cordova or PhoneGap CLI: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and add your plugin.-->
 
 
 <div class="row" style="margin-top:40px;">
