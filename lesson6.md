@@ -51,8 +51,7 @@ Or from within the top-level of the plugin project you can simply run:
 ### Using Plugman
 The `npm` method is the preferred way to publish your plugins, however you can also use the plugman tool to do so as well with the following:
 
-    $ plugman publish myPluginDirectoryPath
-
+    $ plugman publish /path/to/your/plugin
 
 
 <div class="row" style="margin-top:40px;">
