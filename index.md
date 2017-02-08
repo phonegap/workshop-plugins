@@ -8,10 +8,8 @@ title:  PhoneGap Lab - Using Plugins End to End
 This lab will take you through the process of building your own PhoneGap plugins from beginning to end. We will cover
 the basic requirements for a PhoneGap plugin all the way to testing and publishing your new plugin for others to consume.
 
-- The sample project is located in the GitHub repo [here](https://github.com/phonegap/workshop-plugins)
+<!--- The sample project is located in the GitHub repo [here](https://github.com/phonegap/workshop-plugins)-->
 - The slides used in the lab can be found [here](https://github.com/phonegap/workshop-plugins/blob/master/1189-PhoneGapPlugins.pdf)
-
-<!--TODO: Add slides link in above-->
 
 ## Requirements & Dependencies
 

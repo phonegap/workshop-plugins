@@ -13,15 +13,15 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within th
   The attributes defined on the root plugin element are the `id` and `version` ([semver](http://semver.org/) syntax) with the 1st child element defining the plugin name.   
 
       <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-            id="my-awesome-plugin" version="0.0.1">
-      <name>MyAwesomePlugin</name>
+            id="my-echo-plugin" version="0.0.1">
+      <name>myechoplugin</name>
 
   Some other metadata tags you could specify are `<description>`, `<author>` etc. Check out the official [plugin.xml specification](http://cordova.apache.org/docs/en/latest/plugin_ref/spec.html) for a complete list of supported values.
 
 
 - **JavaScript Interface Defintion**
 
-  The JavaScript interface is defined in the `<js-module>` element with the target `src` file and a `name` to refer to it (if you needed to specify it in a `cordova.require` to import it. It's referred to with the name specified here and qualified by the plugin id - ie: `my-awesome-plugin.Template`
+  The JavaScript interface is defined in the `<js-module>` element with the target `src` file and a `name` to refer to it (if you needed to specify it in a `cordova.require` to import it. It's referred to with the name specified here and qualified by the plugin id - ie: `my-echo-plugin.Template`
 
     The `<clobbers>` element specifies the target name to make available on the global `window` object.This is the name used by Cordova app developers when they call your plugin (ie: `Template.<function-name>` or in the case of the [Cordova contacts plugin](https://github.com/apache/cordova-plugin-contacts) `navigator.contacts.find`)
 
@@ -64,7 +64,7 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within th
 
   The `<dependency>` tag allows you to specify other plugins your plugin depends on. The plugins are referenced by their unique **npm ids** or by **github url**.
 
-      <dependency id="cordova-plugin-someplugin" url="https://github.com/myuser/someplugin" />
+      <dependency id="cordova-plugin-someplugin" url="https://github.com/myuser/someplugin"/>
       <dependency id="cordova-plugin-someplugin" version="1.0.1">
 
   >See [the cordova-plugin-file-transfer plugin](https://github.com/apache/cordova-plugin-file-transfer/blob/master/plugin.xml) for an example
@@ -75,7 +75,9 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within th
     **Hint:**
    `Template.echo(function(result){alert("Success: " +result)},function(e){alert("Fail " + e)},"Helloooo Adobe!",true)`
 
-2. Add a platform, build and run your app
+2. Build and run your app
+
+    $ cordova run ios
 
 ![](images/echo-run.png)
 

@@ -16,10 +16,6 @@ The [phonegap-plugin-template](https://github.com/phonegap/phonegap-plugin-templ
 
         $ phonegap-plugin-create PATH NAME ID
 
-   For example:<br>
-
-        $ phonegap-plugin-create ~/MyAwesomePlugin MyAwesomePlugin my-awesome-plugin
-
 >The template creates a working plugin called Echo, which takes a String parameter and returns it back to the caller via a "success" callback function.
 
 ## Plugin Project Structure
@@ -30,14 +26,43 @@ Once you create your plugin project using the **phonegap-plugin-template** tool,
 
 ### Exercise 
 
-1. Create a new plugin using the `phonegap-plugin-create` command
-2. Open the `plugin.xml` and uncomment the Android and iOS `<platform>` specific sections
-3. Add your new plugin to a PhoneGap or Cordova app project
-4. Verify the plugin has been added via the `$ cordova plugin list` (or `$ phonegap plugin list`)
+1. Create a new plugin using the `phonegap-plugin-create` command (preferably at the same directory level as your `myApp` project but not within it)
 
->**Tip:** You can use the `--link` flag when you add the plugin locally during developmet and Cordova will create a symbolic link to the plugin folder. This way any native source code updates you make will automatically be available to your project ie: `$ cordova plugin add --link ~/path/to/plugin`. Note that this does not include changes made to your JavaScript interface. You will need to remove and re-add your plugin for those updates. 
+        $ phonegap-plugin-create MyEchoPlugin myechoplugin my-echo-plugin
 
->When removing a locally added plugin, specify the plugin id - ie: `my-awesome-plugin`. You can retrieve the list of plugins added to a project by typing `phonegap plugin list`.
+2. Open the `plugin.xml` and uncomment these Android and iOS `<platform>` specific sections:
+
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="Echo" >
+                    <param name="android-package" value="org.apache.cordova.test.Echo"/>
+                </feature>
+            </config-file>
+
+            <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/test" />
+        </platform>
+
+        <platform name="ios">
+            <config-file target="config.xml" parent="/*">
+                <feature name="Echo">
+                    <param name="ios-package" value="CDVEcho"/>
+                </feature>
+            </config-file>
+            <source-file src="src/ios/CDVEcho.m" />
+        </platform>
+
+3. `cd` into your Cordova app and add your new plugin
+
+       $ cd myApp
+       $ cordova plugin add --link ../MyEchoPlugin
+
+4. Verify the plugin has been added
+
+       $ cordova plugin list
+
+   >**Tip:** You can use the `--link` flag when you add the plugin locally during developmet and Cordova will create a symbolic link to the plugin folder. This way any native source code updates you make will automatically be available to your project ie: `$ cordova plugin add --link ~/path/to/plugin`. Note that this does not include changes made to your JavaScript interface. You will need to remove and re-add your plugin for those updates. 
+
+   >When removing a locally added plugin, specify the plugin id - ie: `my-echo-plugin`. You can retrieve the list of plugins added to a project by typing `phonegap plugin list`.
 
 ##### Creating a Project for Testing
 If you don't have a Cordova or PhoneGap project handy for testing with your new plugin, you can simply create a new one using the Cordova or PhoneGap CLI: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and add your plugin.

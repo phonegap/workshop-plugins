@@ -29,8 +29,8 @@ Navigate to [npmjs.org](http://npmjs.org) and do your own search for Cordova plu
 ![](images/npm-plugin-search.png)
 
 
-## Plugin Installation 
-Plugins are added and removed using the [Cordova](https://www.npmjs.com/package/cordova-cli) or [PhoneGap CLI](https://www.npmjs.com/package/phonegap).
+## Plugin Command Review 
+Add, remove and list plugins using the following commands from the [Cordova](https://www.npmjs.com/package/cordova-cli) or [PhoneGap CLI](https://www.npmjs.com/package/phonegap).
 
   - **Add a Plugin**
 
@@ -49,6 +49,63 @@ Plugins are added and removed using the [Cordova](https://www.npmjs.com/package/
 
 >The platform specific plugin code will be copied into the target platform when a `prepare`, `build` or `run` command is specified using one of the CLI's. 
 >If the plugin supports the `browser` platform, it will be copied to that target when the `phonegap serve` command is run. 
+
+## Exercise
+
+1. Create a folder called `MyPlugin` and `cd` into it
+
+        $ mkdir MyPlugin
+        $ cd MyPlugin/
+
+2. Create a file called `plugin.xml` 
+
+        $ touch plugin.xml
+
+3. Open `plugin.xml` and enter the following:
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            id="org-me-myplugin"
+            version="0.0.1">
+            <name>myplugin</name>
+        </plugin>
+
+4. Create a basic Cordova project if you don't have one already
+
+        $ cordova create ../MyApp
+
+5. `cd` into the new app project
+
+        $ cd ../MyApp/
+
+2. Add your plugin 
+
+        $ cordova plugin add ../MyPlugin
+
+3. List the plugins to ensure it's been added
+
+        $ cordova plugin list
+
+4. **You must remove the plugin before moving on to the next step**
+
+        $ cordova plugin remove org-me-myplugin
+
+**Add plugin dependencies**
+
+1. Now go back into your plugin and edit the `plugin.xml` to add the following dependencies
+
+        <dependency id="cordova-plugin-device"/>
+        <dependency id="cordova-plugin-console"/>
+
+2. `cd` into your app project and **add your plugin again**
+
+        $ cordova plugin add ../MyPlugin
+
+3. If no platforms were installed, you will need to add your platform to see them installed
+
+
+
 
 <!--
 ### Exercise 
