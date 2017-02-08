@@ -35,22 +35,21 @@ To specify dependencies for a plugin, alter the `engines` element in `package.js
         }
     }
 
-
 ## Publishing your Plugin
-When you are ready to share your plugin with the community, you can do so using either npm or the plugman tool. 
+When you are ready to share your plugin with the community, you can do so using either **npm** or the **plugman tool**. 
 
 ### Using npm
-You must have a user on the npm registry to publish, if you don't already have one you can create one using the `adduser` command as shown below:    
+You must have a user on the npm registry to publish, if you don't already have one you can create one using the `adduser` command as shown below:
 
     $ npm adduser # (only if you don't have an account in the npm registry yet)
     $ npm publish /path/to/your/plugin
 
 Or from within the top-level of the plugin project you can simply run:
 
-    $ npm publish . 
+    $ npm publish .
 
 ### Using Plugman
-While the `npm` method is the preferred way to publish your plugins, you should be aware that you could also use the plugman tool to do so as well.
+The `npm` method is the preferred way to publish your plugins, however you can also use the plugman tool to do so as well with the following:
 
     $ plugman publish myPluginDirectoryPath
 
@@ -59,7 +58,7 @@ While the `npm` method is the preferred way to publish your plugins, you should 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
 <a href="lesson5.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="lesson7.html" class="btn btn-default pull-right">Next <i class="glyphicon
-glyphicon-chevron-right"></i></a>
+<!--<a href="lesson7.html" class="btn btn-default pull-right">Next <i class="glyphicon
+glyphicon-chevron-right"></i></a>-->
 </div>
 </div>

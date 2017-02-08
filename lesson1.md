@@ -13,7 +13,7 @@ then I created a new project, installed the plugin and step debugged the native 
 -->
 
 ## Plugin Discovery
-Plugins are used to extend the native functionality exposed by the PhoneGap native-app container. Examples of plugins include those that allow to access the Camera, Battery Status, Push Notifications, Geolocation, 
+Plugins are used to extend the native functionality exposed by the PhoneGap native app container. Examples of plugins include those that allow to access the Camera, Battery Status, Push Notifications, Geolocation, 
 Barcode Scanning, Native Social Sharing and many more. The [npm registry](http://nmpjs.org) is used to find plugins currently available to the community. You can discover the latest by searching `ecosystem:cordova`.
 
 >Plugins may often be prefixed with a naming convention depending on the goal of the plugin. All of the core supported Cordova plugins are prefixed 
@@ -22,7 +22,7 @@ prefixed with `ionic-*`. Telerik also has a [plugin marketplace](http://plugins.
 
 <!--Demo using npm as a cordova plugin registry-->
 
-### Exercise 1
+### Exercise
 
 Navigate to [npmjs.org](http://npmjs.org) and do your own search for Cordova plugins now to see what you can find. Does it look like the picture below? Scroll through and take a look at all of the different plugins already available. 
 
@@ -50,7 +50,7 @@ Plugins are added and removed using the [Cordova](https://www.npmjs.com/package/
 >The platform specific plugin code will be copied into the target platform when a `prepare`, `build` or `run` command is specified using one of the CLI's. 
 >If the plugin supports the `browser` platform, it will be copied to that target when the `phonegap serve` command is run. 
 
-### Exercise 2
+### Exercise 
 
 1. Create a simple plugin using an existing plugin's `plugin.xml` file as a resource (for instance cordova-plugin-device)
 2. Add dependencies to two additional plugins
