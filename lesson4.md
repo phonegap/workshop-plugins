@@ -10,30 +10,33 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within th
 
 - **Plugin Metadata**
 
-  The attributes defined on the root plugin element are the `id` and `version` with the 1st child element defining the plugin name.   
+  The attributes defined on the root plugin element are the `id` and `version` ([semver](http://semver.org/) syntax) with the 1st child element defining the plugin name.   
 
       <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
             id="my-awesome-plugin" version="0.0.1">
       <name>MyAwesomePlugin</name>
 
+  Some other metadata tags you could specify are `<description>`, `<author>` etc. Check out the official [plugin.xml specification](http://cordova.apache.org/docs/en/latest/plugin_ref/spec.html) for a complete list of supported values.
 
-- **JavaScript code**
+
+- **JavaScript Interface Defintion**
 
   The JavaScript interface is defined in the `<js-module>` element with the target `src` file and a `name` to refer to it (if you needed to specify it in a `cordova.require` to import it. It's referred to with the name specified here and qualified by the plugin id - ie: `my-awesome-plugin.Template`
 
-    The `<clobbers>` element specifies the target name to make available on the global `window` object and is used by Cordova app developers when they call your plugin (ie: `Template.echo()`)
+    The `<clobbers>` element specifies the target name to make available on the global `window` object.This is the name used by Cordova app developers when they call your plugin (ie: `Template.<function-name>` or in the case of the [Cordova contacts plugin](https://github.com/apache/cordova-plugin-contacts) `navigator.contacts.find`)
 
       <js-module src="www/template.js" name="Template">
           <clobbers target="Template" />
       </js-module>
 
-   >Cordova uses this to automatically inject the `<script>` tag so the app developer doesn't need to worry about it.
+   >You will need a `<js-module>` element for each JavaScript file needed in your interface. Cordova uses this to automatically inject the `<script>` tag so the app developer doesn't need to worry about it.
 
-- **Platform Code Definition**
+- **Platform Interface Definitions**
 
-  A `<platform`> element is defined for each platform supported by a plugin. The `<feature>` element specifies the name to use for the plugin service and maps it to the
-  class name for each platform. In the case of Android it will need to be prefixed with the package id as shown below. This mapping is used to
-  locate the code to run when the service is called.
+  A `<platform`> element is defined for each platform supported by a plugin. The `<feature>` tag within the `<config-file>` specifies the `name` to use as the plugin ***service***, which is called as a parameter from the JavaScript interface. The `value` sets the name of the
+  native class to map the *service* call to. 
+  
+  >This tag is injected into the platform-specific `config.xml` file to make the platform aware of the additional code library. In the case of Android it will need to be prefixed with the package id as shown below.
 
   **Android** <br>
 
@@ -71,21 +74,30 @@ Plugins are defined using a top-level metadata file named `plugin.xml` within th
 
     **Hint:**
    `Template.echo(function(result){alert("Success: " +result)},function(e){alert("Fail " + e)},"Helloooo Adobe!",true)`
+
 2. Add a platform, build and run your app
 
 ![](images/echo-run.png)
 
-### Resources
-Check out the complete [plugin.xml specification](http://cordova.apache.org/docs/en/latest/plugin_ref/spec.html) for a complete list of supported values. 
-
-<!--## Demo - Data Passing
-TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
-
 ### Extra Credit
 Update your plugin signature to pass additional parameters and code handling on the native side for them using the information learned thus far.
 
+### Extra Extra Credit :)
+Update your plugin to add an additional action other than `echo` for the plugin consumer to call. Use the information learned above and existing plugins as references to 
+implement the handling all the way through to the native side for each platform. 
 
-<!-- Add plugin validation? -->
+An example might be to add a `notify` type of action to call and display a native notification for each platform. 
+
+
+
+### Resources
+Be sure to use the official [plugin.xml specification](http://cordova.apache.org/docs/en/latest/plugin_ref/spec.html) for a complete list of supported values. The [Cordova Plugin Development Guide](http://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html) 
+can also be used to further your knowledge on all of the above.
+
+>**TIP:** Check out the [Cordova Contacts plugin](https://github.com/apache/cordova-plugin-contacts/blob/master/plugin.xml) for a great example of a more complex plugin definition.
+
+<!--## Demo - Data Passing
+TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->
 
 
 <div class="row" style="margin-top:40px;">

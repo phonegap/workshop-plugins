@@ -8,19 +8,22 @@ title: Lesson 3&#58; Plugin Implementation
 ## Plugin Components
 A plugin is made up of the following components:
 
-1. A **JavaScript interface**
-1. A **native interface** for each supported platform  (Obj-C/Swift, Java or C#)
+1. A **JavaScript interface** (called by plugin consumers)
+
+1. A **native interface** for each supported platform ie: Obj-C / Swift, Java, C# (called from JavaScript interface)
+
 1. A built-in **Cordova bridge** that provides:
- - plumbing to *map the JavaScript arguments* to the native interfaces
- - callback handling to ensure the native code routes back the result to the proper callback depending on success or failure
+
+   - plumbing to *map the JavaScript arguments* to the native interfaces
+   - callback handling to ensure the native code routes back the result to the proper callback depending on success or failure
 
 ## JavaScript Bridge
 The `exec()` function is used by Cordova to call the native interface and pass the required parameters
 
-    cordova.exec(success(result) {}, // Function to call with success result
-                 fail(error) {},     // Function to call with error result
-                 serviceName,        // Service (native class)
-                 actionName,         // Action to invoke in service
+    cordova.exec(successCallback(result) {}, // Function to call on success
+                 failCallback(error) {},     // Function to call on error
+                 serviceName,                // Service
+                 actionName,                 // Action to invoke in service
                  ["firstArg", "secondArg", 42, false]); // Array of opt. args
 
 <br>
@@ -30,11 +33,11 @@ The `exec()` function is used by Cordova to call the native interface and pass t
 ![](images/js-ios2.png)
 
 #### Notes
-1. Cordova will locate the ios platform interface class matching `Echo` (based on **plugin.xml** mapping)
+1. Cordova will locate the ios platform interface class matching `Echo` (based on **plugin.xml** mapping, in this case `CDVEcho`)
 1. Cordova will look for a *method* matching `echo` (or `echoAsync`) in the ios plugin interface and call it, passing in an object containing the necessary parameters and callback info
-1. The `command` argument contains references to the parameters that are sent from JavaScript and the callbacks
-1. The `pluginResult` object is created with data retrieved from JavaScript. The `CDVCommandStatus` parameter defines whether the plug-in call was successful or not.
-1. the `sendPluginResult()` method returns a response back to JavaScript (invoking the callback)
+1. The `command` argument contains references to the parameters that are sent from JavaScript (`message`) and the callbacks
+1. The `pluginResult` object is created with a status and any other data it needs to return. The `CDVCommandStatus` parameter defines whether the plug-in call was successful or not so the proper callback is invoked.
+1. the `sendPluginResult()` method returns the plugin result back to JavaScript (invoking the callback)
 
 >The `plugin.xml` defines the mapping for the service name to the native ios class
 
@@ -47,11 +50,11 @@ The `exec()` function is used by Cordova to call the native interface and pass t
 
 #### Notes
 1. Cordova will locate the android platform interface class matching `Echo` (based on **plugin.xml** mapping)
-1. Cordova will locate the `execute()` method in the android plugin code and pass in the `action` value as well as the rest of the arguments in the order shown above
-1. The `args` array contains references to the parameters sent from JavaScript
+1. Cordova will locate the `execute()` method in the android plugin code and pass in the `action` value and the rest of the parameters in the order shown above
+1. The `args` array contains references to the parameters sent from JavaScript (`message`)
 1. The `callbackContext` contains the callback function info
-1. The `PluginResult` object is created with data retrieved from JavaScript. The `PluginResult.Status.*` parameter defines whether the plug-in call was successful or not.
-1. The `sendPluginResult()` method returns a response back to JavaScript (invoking the callback)
+1. The `PluginResult` object is created with data retrieved from JavaScript. The `PluginResult.Status.*` parameter defines whether the plug-in call was successful or not to call the right callback function.
+1. The `sendPluginResult()` method returns the plugin result back to JavaScript (invoking the callback)
 
 >The `plugin.xml` defines the mapping for the service name to the native android class
 

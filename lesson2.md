@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Lesson 2&#58; Plugin Scaffolding
+title: Lesson 2&#58; Plugin Template
 ---
 <!--_approximate duration : 10 minutes_-->
 
@@ -30,13 +30,18 @@ Once you create your plugin project using the **phonegap-plugin-template** tool,
 
 ### Exercise 
 
-1. Create a new plugin using the **phonegap-plugin-template** tool
+1. Create a new plugin using the `phonegap-plugin-create` command
 2. Open the `plugin.xml` and uncomment the Android and iOS `<platform>` specific sections
 3. Add your new plugin to a PhoneGap or Cordova app project
+4. Verify the plugin has been added via the `$ cordova plugin list` (or `$ phonegap plugin list`)
 
->If you don't have a Cordova or PhoneGap project handy for testing with your new plugin, you can create a new one using the Cordova or PhoneGap CLI respectively: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and add your plugin.
+>**Tip:** You can use the `--link` flag when you add the plugin locally during developmet and Cordova will create a symbolic link to the plugin folder. This way any native source code updates you make will automatically be available to your project ie: `$ cordova plugin add --link ~/path/to/plugin`. Note that this does not include changes made to your JavaScript interface. You will need to remove and re-add your plugin for those updates. 
 
->**Tip:** You can use the `--link` flag when you add the plugin locally during developmet and Cordova will create a symbolic link to the plugin folder. This way any native source code updates you make will automatically be available to your project ie: `$ cordova plugin add --link ~/path/to/plugin`. When removing a locally added plugin, specify the plugin id - ie: `my-awesome-plugin`. You can retrieve the list of plugins added to a project by typing `phonegap plugin list`.
+>When removing a locally added plugin, specify the plugin id - ie: `my-awesome-plugin`. You can retrieve the list of plugins added to a project by typing `phonegap plugin list`.
+
+##### Creating a Project for Testing
+If you don't have a Cordova or PhoneGap project handy for testing with your new plugin, you can simply create a new one using the Cordova or PhoneGap CLI: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and add your plugin.
+
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
