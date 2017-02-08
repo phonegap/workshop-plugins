@@ -3,7 +3,7 @@ layout: module
 title: Lesson 3&#58; Plugin Implementation
 ---
 
-_approximate duration : 15 minutes_
+<!--_approximate duration : 15 minutes_-->
 
 ## Plugin Components
 A plugin is made up of the following components:

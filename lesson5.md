@@ -2,7 +2,7 @@
 layout: module
 title: Lesson 5&#58; Plugin Debugging
 ---
-_approximate duration : 5 minutes_
+<!--_approximate duration : 5 minutes_-->
 
 ## iOS 
 - Xcode

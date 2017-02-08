@@ -3,7 +3,7 @@ layout: module
 title: Lesson 1&#58; Plugin Discovery and Installation
 ---
 
-_approximate duration : 10 minutes_
+<!--_approximate duration : 10 minutes_-->
 
 <!--
 for cordova-plugin-device, I showed the repo, then I explained the contents of plugin.xml
@@ -50,9 +50,10 @@ Plugins are added and removed using the [Cordova](https://www.npmjs.com/package/
 >The platform specific plugin code will be copied into the target platform when a `prepare`, `build` or `run` command is specified using one of the CLI's. 
 >If the plugin supports the `browser` platform, it will be copied to that target when the `phonegap serve` command is run. 
 
+<!--
 ### Exercise 
 
-1. Create a simple plugin using an existing plugin's `plugin.xml` file as a resource (for instance cordova-plugin-device)
+1. Create a simple plugin using an existing plugin's `plugin.xml` file as a resource (for instance [cordova-plugin-device](https://github.com/apache/cordova-plugin-device))
 2. Add dependencies to two additional plugins
 3. Add your new plugin to a PhoneGap or Cordova app project 
 
@@ -61,7 +62,7 @@ Plugins are added and removed using the [Cordova](https://www.npmjs.com/package/
         `$ cordova plugin add --link ~/path/to/plugin`
 
 >If you need to create a project first with the CLI, do so with the following commands, from the Cordova or PhoneGap CLI respectively: `$ cordova create myAppProject` or `$ phonegap create myAppProject`, then `cd` into `myAppProject` and run the plugin commands listed above.
-
+-->
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
 <a href="index.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>

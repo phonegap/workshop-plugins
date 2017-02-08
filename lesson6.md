@@ -3,7 +3,7 @@ layout: module
 title: Lesson 6&#58; Plugin Publishing
 ---
 
-_approximate duration : 5 minutes_
+<!--_approximate duration : 5 minutes_-->
 
 ## Plugin Searchability
 
