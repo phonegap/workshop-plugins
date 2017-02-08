@@ -83,6 +83,8 @@ Add, remove and list plugins using the following commands from the [Cordova](htt
 
         $ cordova plugin list
 
+   >Successful addition of a plugin means it's a valid plugin. 
+
 4. **You must remove the plugin before moving on to the next step**
 
         $ cordova plugin remove org-me-myplugin
