@@ -16,6 +16,7 @@ For instance, a `package.json` may have the following keywords specified:
 
     "keywords": [
         "ecosystem:cordova",
+        "ecosystem:phonegap"
         "cordova-android",
         "cordova-ios",
         "cordova-windows"

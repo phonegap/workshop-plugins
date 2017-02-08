@@ -8,9 +8,9 @@ title: Lesson 3&#58; Plugin Implementation
 ## Plugin Components
 A plugin is made up of the following components:
 
-1. A **JavaScript interface** (called by plugin consumers)
+1. A **JavaScript interface** (called by the users of your plugin)
 
-1. A **native interface** for each supported platform ie: Obj-C / Swift, Java, C# (called from JavaScript interface)
+1. A **native interface** for each supported platform ie: Obj-C / Swift, Java etc (called from JavaScript interface)
 
 1. A built-in **Cordova bridge** that provides:
 

@@ -4,13 +4,13 @@ title: Lesson 5&#58; Plugin Debugging
 ---
 <!--_approximate duration : 5 minutes_-->
 
-## iOS 
+## iOS Debuggin Demo's
 - Xcode
 - Safari Remote Debugging (Develop Menu)
 
 >If you're running on iOS, you can add the cordova-plugin-console olugin to see the logged output in Xcode
 
-## Android
+## Android Debugging Demo's
 - Android Studio
 - Chrome Remote Debugging (`chrome://inspect`)
 - Android SDK / `adb logcat`
